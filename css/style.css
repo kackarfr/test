@@ -1,0 +1,304 @@
+/* ------------------------------------------------------
+   Import global google-font css & animate.js library
+-------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+
+    #btn-move-to-top {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background-color: #a90060;
+        position: fixed;
+        border: none;
+        bottom: 20px;
+        right: 30px;
+        filter: drop-shadow(0 0 3px #d20092);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: scale .5s;
+        scale: 1;
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+/* ----------------------------
+   Css rules for main section
+------------------------------- */
+main {
+    position: relative;
+    /*background: url(/assets/img/bg.jpg) no-repeat center center fixed;*/
+    /*background-size: cover;*/
+}
+
+/* ----------------------------
+   Css rules for header section
+------------------------------- */
+header {
+    height: 12dvh;
+    position: sticky;
+    top: 0;
+
+    .navbar {
+        width: 60%;
+        height: 100%;
+        margin-inline: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul {
+            list-style: none;
+            display: flex;
+
+            a {
+                color: black;
+                text-decoration: none;
+                font-family: system-ui;
+                font-size: .8rem;
+                /*border-radius: 100dvw;*/
+                padding-inline: 15px;
+                padding-block: 10px;
+                /*transition: background-color .15s, color .15s, box-shadow .15s;*/
+
+                &:hover {
+                    /*background-color: #c3d8f8;*/
+                    /*box-shadow: 0 0 3px #ffffff;*/
+                    /*color: white;*/
+                    color: blue;
+                }
+            }
+        }
+
+        #btn-hamburg {
+            display: none;
+            justify-content: center;
+            flex-direction: column;
+            width: 17px;
+            height: 25px;
+            gap: 2px;
+            background-color: transparent;
+            outline: none;
+            border: none;
+
+            span {
+                background-color: #525252;
+                height: 2px;
+                width: 100%;
+                border-radius: 100dvw;
+
+                &:last-child {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+
+/* --------------------------------
+   Css rules for mega-menu section
+----------------------------------- */
+.mega-menu-wrapper {
+    position: absolute;
+    min-height: 200px;
+    width: 100dvw;
+    display: block;
+    top: 12dvh;
+    left: 0;
+    right: 0;
+
+
+    .mega-menu--services {
+        width: 100%;
+        /*height: min-content;*/
+        height: 0;
+        background-color: #f1f1f1;
+        visibility: hidden;
+        transition: height .3s;
+    }
+
+    .mega-menu--dev {
+        width: 100%;
+        /*height: fit-content;*/
+        height: 0;
+        background-color: #f1f1f1;
+        visibility: hidden;
+        transition: height .3s;
+    }
+
+    .mega-menu--training {
+        width: 100%;
+        /*height: fit-content;*/
+        height: 0;
+        background-color: #f1f1f1;
+        visibility: hidden;
+        transition: height .3s;
+    }
+
+    .mega-menu--databases {
+        width: 100%;
+        /*height: fit-content;*/
+        height: 0;
+        background-color: #f1f1f1;
+        visibility: hidden;
+        transition: height .3s;
+    }
+
+    .mega-menu--cloud {
+        width: 100%;
+        height: 0;
+        background-color: #f1f1f1;
+        visibility: hidden;
+        transition: height .3s;
+    }
+}
+
+/* ----------------------------
+   Css rules for hero section
+------------------------------- */
+.hero {
+    height: 88dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-wrap: balance;
+    gap: 25px;
+
+    .hero__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        p {
+            font-family: "Roboto", system-ui;
+            font-size: 3rem;
+            font-weight: 200;
+            text-wrap: balance;
+        }
+
+        span {
+            font-family: "Roboto", system-ui;
+            font-size: 3rem;
+            font-weight: 500;
+            position: relative;
+            color: #940053;
+            margin-right: 5px;
+            padding-inline: 10px;
+            filter: drop-shadow(0 0 .75rem #da1298);
+        }
+    }
+
+    .hero__description {
+        text-align: center;
+
+        p {
+            max-width: 100ch;
+            font-size: .75rem;
+            color: #404040;
+            font-family: 'roboto', system-ui;
+            font-weight: 300;
+            line-height: 1.25rem;
+            text-transform: capitalize;
+            text-wrap: balance;
+            position: relative;
+
+            &::before {
+                content: open-quote;
+                font-size: 2rem;
+                color: #a90060;
+                position: absolute;
+                transform: translateX(-21px);
+            }
+
+            &::after {
+                position: absolute;
+                content: close-quote;
+                font-size: 2rem;
+                transform: translateX(15px) translateY(13px);
+                color: #a90060;
+            }
+        }
+    }
+
+    #btn-get-started {
+        margin-top: 20px;
+        outline: none;
+        padding-inline: 22px;
+        padding-block: 12px;
+        border: none;
+        background-color: #940053;
+        color: white;
+        text-transform: uppercase;
+        border-radius: 100dvw;
+        transition: box-shadow .5s;
+        box-shadow: 0 0 3px #da1298;
+        cursor: pointer;
+        font-family: system-ui;
+
+        &:hover {
+            box-shadow: 0 0 10px #da1298;
+        }
+    }
+}
+
+
+
+/*---------------------------------------
+   Media queries for responsive design
+----------------------------------------- */
+@media (max-width: 1100px) {
+    .navbar {
+        ul {
+            display: none;
+        }
+
+        #btn-hamburg {
+            display: flex;
+        }
+    }
+}
+
+@media (max-width: 430px) {
+    .hero {
+        gap: 25px;
+    }
+
+    .hero-title {
+        flex-direction: column;
+        gap: 5px;
+
+        p {
+            display: none;
+        }
+    }
+
+    .header-description {
+        p {
+            max-width: 30ch;
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .hero {
+        padding-inline: 20px;
+    }
+}
